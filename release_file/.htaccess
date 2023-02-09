@@ -1,0 +1,16 @@
+<Files ~ "^\.(htaccess|htpasswd)$">
+  deny from all
+</Files>
+
+addDefaultCharset utf-8
+
+ErrorDocument 404 https://onestech.net/profile/
+
+#ファイル一覧機能を無効
+Options -Indexes
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteBase /
+  RewriteRule ^$ profile/ [R=301,L]
+</IfModule>

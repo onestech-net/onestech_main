@@ -1,0 +1,18 @@
+@use '../custom' as *;
+@use '../global/' as g;
+
+.l-container,
+.l-container--fluid {
+  @include make-container();
+
+  padding-left: 20px;
+  padding-right: 20px;
+}
+
+@each $breakpoint, $container-max-width in g.$container-max-widths {
+  @include g.mq($breakpoint) {
+    .l-container {
+      max-width: $container-max-width;
+    }
+  }
+}

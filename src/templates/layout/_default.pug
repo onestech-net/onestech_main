@@ -1,0 +1,15 @@
+include /config/_config
+
+block metaTags
+  include /config/_metaTags
+
+doctype html
+html(lang="ja")
+  head
+    block head
+      include /parts/_head
+
+  body
+    block content
+
+    block script

@@ -1,0 +1,41 @@
+/* Settings */
+
+$logoBlue-light: #638be0;
+$logoBlue: #6d7993;
+$logoGray: #9099a2;
+
+$gray-lightest: lighten(#f7f7f7, 2%);
+$gray-lighter: #eee;
+$gray-light: #bbb;
+$gray: #777;
+$gray-dark: #333;
+
+$green: #37a13b;
+$red: #ffb3a3;
+
+$link-color: darken(#638be0, 5%);
+$text-color: #333;
+$body-color: #fff;
+
+$font-family-base: 'Noto Sans JP', 'Helvetica Neue', 'Helvetica', 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', 'Arial', 'Yu Gothic', 'Meiryo', sans-serif;
+$font-family-minchou: 'Times New Roman', 'YuMincho', 'Hiragino Mincho ProN', 'Yu Mincho', 'MS PMincho', serif;
+$font-family-en: 'roboto', 'Helvetica', 'Arial', sans-serif;
+
+$base-line-height: 1.6;
+$base-letter-spacing: .2rem;
+$space-base: $base-line-height * .6em;
+
+/* LayoutArray */
+$mq-breakpoints: (
+  xs: 576px,
+  sm: 768px,
+  md: 1024px,
+  lg: 1280px,
+) !default;
+
+$container-max-widths: (
+  xs: 540px,
+  sm: 720px,
+  md: 960px,
+  lg: 1100px
+) !default;

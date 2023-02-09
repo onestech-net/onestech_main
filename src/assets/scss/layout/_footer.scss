@@ -1,0 +1,14 @@
+@use '../global/' as *;
+
+.l-footer {
+  padding: 5px 10px 25px;
+  @include mq(sm) {
+    padding: 10px 10px 30px;
+  }
+  &__copy {
+    margin-bottom: 0;
+    font-size: 1.4rem;
+    color: $gray;
+    text-align: center;
+  }
+}

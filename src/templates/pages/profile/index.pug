@@ -1,0 +1,15 @@
+extends /layout/_default
+
+block append metaTags
+  -
+    var page = {
+      title: 'profile',
+      ogTitle: 'プロフィール',
+      description: 'Webエンジニア 大西巧真のプロフィールページです。経歴、詳細、これまでに習得したスキルセットをまとめています。',
+      ogDescription: 'Webエンジニア 大西巧真のプロフィールページです。経歴、詳細、これまでに習得したスキルセットをまとめています。',
+      ogUrl: '/profile/',
+      ogType: 'article'
+    }
+
+block content
+  div#profile

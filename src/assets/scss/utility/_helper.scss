@@ -1,0 +1,28 @@
+@use '../global/' as *;
+
+.u-center {
+  text-align: center;
+}
+
+.u-showXs {
+  display: none;
+  @include mq(xs) {
+    display: block;
+  }
+}
+
+.u-hideXs {
+  @include mq(xs) {
+    display: none;
+  }
+}
+
+.u-hideSm {
+  @include mq(sm) {
+    display: none;
+  }
+}
+
+.u-fmEn {
+  font-family: $font-family-en;
+}

@@ -1,0 +1,55 @@
+@use '../global' as *;
+
+* {
+  box-sizing: border-box;
+  &::before,
+  &::after {
+    box-sizing: border-box;
+  }
+}
+
+html {
+  font-size: 62.5%;
+  text-size-adjust: 100%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: $font-family-base;
+  color: $text-color;
+  line-height: $base-line-height;
+  letter-spacing: $base-letter-spacing;
+  background: $body-color;
+}
+
+p, li, dt, dd, th, td, pre {
+  line-break: strict;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+a {
+  position: relative;
+  display: inline-block;
+  color: $link-color;
+  text-decoration: none;
+  transition: .3s;
+  @include mq(sm) {
+    &::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background-color: $link-color;
+      transition: .3s;
+    }
+    &:hover {
+      color: $link-color;
+      &::after {
+        width: 100%;
+      }
+    }
+  }
+}

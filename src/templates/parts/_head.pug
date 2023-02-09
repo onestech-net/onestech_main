@@ -1,0 +1,23 @@
+meta(charset="UTF-8")
+if !page.title
+  title onestech
+else
+  title #{page.title} | onestech
+unless !page.description
+  meta(name="description" content=page.description)
+meta(name="viewport", content="width=device-width, initial-scale=1.0")
+meta(name="format-detection" content="telephone=no")
+if page.ogType == 'top'
+  meta(property="og:type" content="website")
+else if page.ogType == 'article'
+  meta(property="og:type" content="article")
+meta(property="og:title" content=page.ogTitle + " | onestech")
+meta(property="og:description" content=page.ogDescription)
+meta(property="og:image" content="https://onestech.net/assets/img/common/og-onestech-01.jpg")
+meta(property="og:url" content="https://onestech.net" + page.ogUrl)
+meta(property="og:site_name" content="onestech")
+meta(name="twitter:card" content="summary")
+link(rel="icon", href=img_path + "/common/favicon.ico" sizes="any")
+link(rel="icon", href=img_path + "/common/icon.svg" type="image/svg+xml")
+link(rel="apple-touch-icon", href=img_path + "/common/apple-touch-icon.png")
+link(rel="manifest" href="https://onestech.net/manifest.webmanifest")

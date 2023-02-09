@@ -1,0 +1,42 @@
+@use '../global' as *;
+
+.c-linkScrolltTop {
+  position: fixed;
+  right: 1.5em;
+  bottom: 1.5em;
+  width: 54px;
+  height: 54px;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 1;
+  color: $gray;
+  background-color: $gray-lighter;
+  text-decoration: none;
+  visibility: hidden;
+  opacity: 0;
+  transition: all .3s;
+  z-index: 50;
+  @include mq(sm) {
+    right: 2em;
+    bottom: 2em;
+  }
+  &::after {
+    content: none;
+  }
+  &:hover {
+    color: $gray;
+    background-color: darken($gray-lighter, 3%);
+  }
+  > i::before {
+    position: absolute;
+    top: 50%;
+    left: 52%;
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 3.4rem;
+  }
+}
+
+.show-scroll {
+  visibility: visible;
+  opacity: 1;
+}

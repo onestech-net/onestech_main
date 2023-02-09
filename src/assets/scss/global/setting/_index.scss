@@ -1,0 +1,8 @@
+@forward 'variables' with (
+  $container-max-widths: (
+    xs: 540px,
+    sm: 720px,
+    md: 960px,
+    lg: 1100px
+  ) !default
+);

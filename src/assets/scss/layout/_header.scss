@@ -1,0 +1,158 @@
+@use '../global/' as *;
+
+.l-header {
+  width: 100%;
+  height: 65px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(144, 153, 162, .75);
+  transition: all .3s;
+  z-index: 100;
+  a {
+    color: $text-color;
+    &::after {
+      background-color: $text-color;
+    }
+    &:hover {
+      color: $text-color;
+    }
+    @include mq(sm) {
+      color: #fff;
+      &::after {
+        background-color: #fff;
+      }
+      &:hover {
+        color: #fff;
+      }
+    }
+  }
+  &__inner {
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 100%;
+    @include mq(sm) {
+      justify-content: center;
+    }
+  }
+  &__nav {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100vw;
+    height: 100vh;
+    background-color: $gray-lighter;
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s;
+    @include mq(sm) {
+      position: static;
+      transform: none;
+      width: auto;
+      height: auto;
+      background-color: transparent;
+      opacity: 1;
+      visibility: visible;
+    }
+    &.show-nav {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &__links {
+    margin: 0;
+    position: absolute;
+    top: 38%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    font-size: 2.4rem;
+    font-weight: 500;
+    font-family: $font-family-en;
+    text-align: center;
+    @include mq(sm) {
+      position: static;
+      display: flex;
+      font-size: 1.6rem;
+      font-weight: 400;
+      transform: none;
+      text-align: left;
+    }
+    &Item {
+      margin: 0 0 .2em;
+      @include mq(sm) {
+        margin: 0;
+        position: relative;
+        &::after {
+          content: '/';
+          color: lighten($logoBlue-light, 25%);
+          margin: 0 5px;
+        }
+        &:last-child {
+          &::after {
+            content: none;
+          }
+        }
+      }
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
+  &__hum {
+    position: relative;
+    width: 45px;
+    height: 45px;
+    cursor: pointer;
+    z-index: 15;
+    @include mq(sm) {
+      display: none;
+    }
+    > span {
+      display: inline-block;
+      position: absolute;
+      left: 50%;
+      transform: translateY(-50%) translateX(-50%);
+      height: 2px;
+      border-radius: 1px;
+      background: #fff;
+      width: 70%;
+      transition: all .3s;
+      &:nth-of-type(1) {
+        top: 25%;
+      }
+      &:nth-of-type(2) {
+        top: 50%;
+      }
+      &:nth-of-type(3) {
+        top: 75%;
+      }
+    }
+    &.is-active {
+      > span {
+        background: $text-color;
+        &:nth-of-type(1) {
+          left: 15%;
+          top: 50%;
+          transform: rotate(-45deg);
+          transform-origin: top center;
+        }
+        &:nth-of-type(2) {
+          opacity: 0;
+        }
+        &:nth-of-type(3) {
+          left: 15%;
+          top: 50%;
+          transform: rotate(45deg);
+          transform-origin: bottom center;
+        }
+      }
+    }
+  }
+  &.hide-header {
+    top: -65px;
+  }
+}

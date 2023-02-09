@@ -1,0 +1,12 @@
+extends /layout/_default
+
+block append metaTags
+  -
+    var page = {
+      ogTitle: 'onestech',
+      ogUrl: '',
+      ogType: 'top'
+    }
+
+block append head
+  meta(name="robots" content="noindex")

@@ -1,0 +1,335 @@
+@use '../global/' as *;
+
+.is-noScroll {
+  overflow: hidden;
+}
+
+.p-mv {
+  height: calc(100vh - 25px);
+  position: relative;
+  background-color: lighten($gray-lighter, 3%);
+  @include mq(sm) {
+    height: calc(100vh + 90px);
+  }
+  &__content {
+    width: 100%;
+    position: absolute;
+    top: calc(50% - 45px);
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    z-index: 10;
+  }
+  &__logo {
+    margin: 0 auto 12px;
+    max-width: 65px;
+    @include mq(sm) {
+      margin: 0 auto 20px;
+      max-width: 75px;
+    }
+    > img {
+      width: 100%;
+    }
+  }
+  &__text {
+    font-family: $font-family-en;
+    text-align: center;
+  }
+  &__title {
+    margin-bottom: .2em;
+    letter-spacing: .3rem;
+    line-height: 1.2;
+    font-weight: 500;
+    font-size: 3.6rem;
+    @include mq(sm) {
+      line-height: 1;
+      font-size: 4.4rem;
+    }
+  }
+  &__prof {
+    margin-bottom: 0;
+    letter-spacing: .2rem;
+    line-height: 1.4;
+    font-size: 2.1rem;
+    @include mq(sm) {
+    font-size: 2.6rem;
+    }
+  }
+}
+
+.p-about {
+  margin-top: -25px;
+  text-align: center;
+  background-color: lighten($logoBlue-light, 20%);
+  @include mq(sm) {
+  margin-top: -90px;
+  }
+  &::before {
+    background-color: $gray-lightest;
+    background-image: radial-gradient(lighten($logoBlue-light, 28%) 1px, transparent 1px);
+    background-size: 15px 15px;
+  }
+  &__text {
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .c-h2 {
+    &::before,
+    &::after {
+      background-color: $logoBlue-light;
+    }
+  }
+}
+
+.p-intro {
+  background-color: lighten($green, 30%);
+  &::before {
+    background-color: $gray-lightest;
+    background-image: radial-gradient(lighten($green, 42%) 1px, transparent 1px);
+    background-size: 15px 15px;
+  }
+  &__wrap {
+    margin: 0 0 2.1em;
+    @include mq(sm) {
+      margin: 0 auto 4em;
+      display: flex;
+      justify-content: space-between;
+      max-width: 768px;
+    }
+  }
+  &__img {
+    margin: 0 auto 1.8em;
+    width: 65%;
+    @include mq(sm) {
+      margin: 0;
+      width: 35%;
+    }
+    > img {
+      width: 100%;
+    }
+  }
+  &__content {
+    @include mq(sm) {
+      width: 60%;
+    }
+  }
+  &__block {
+    margin-bottom: .6em;
+    @include mq(sm) {
+      margin-bottom: 1.2em;
+    }
+    &:last-child {
+      margin-bottom: 0;
+    }
+    > p:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &__kana {
+    margin-bottom: .2em;
+    font-size: 1.4rem;
+    line-height: 1;
+    letter-spacing: .1rem;
+    color: $gray;
+  }
+  &__name {
+    font-size: 2.4rem;
+  }
+  &__tips {
+    .c-h3 {
+      &::before {
+        background-color: $logoBlue-light;
+      }
+    }
+    > p:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .c-h2 {
+    margin-bottom: .8em;
+    &::before,
+    &::after {
+      background-color: $green;
+    }
+  }
+}
+
+.p-skills {
+  background-color: lighten($red, 5%);
+  &::before {
+    background-color: $gray-lightest;
+    background-image: radial-gradient(lighten($red, 10%) 1px, transparent 1px);
+    background-size: 15px 15px;
+  }
+  &__intro {
+    margin-bottom: 3em;
+    text-align: center;
+    @include mq(sm) {
+      margin-bottom: 5em;
+    }
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+  &--front {
+    background-color: lighten($green, 17%);
+    &::before {
+      background-color: lighten($green, 56%);
+      background-image: linear-gradient(0deg, transparent calc(100% - 1px), lighten($gray-lighter, 1%) calc(100% - 1px)), linear-gradient(90deg, transparent calc(100% - 1px), lighten($gray-lighter, 1%) calc(100% - 1px));
+      background-size: 20px 20px;
+      background-repeat: repeat;
+      background-position: center center;
+    }
+    .c-h3 {
+      &::before {
+        background-color: $green;
+      }
+    }
+  }
+  &--back {
+    background-color: lighten($logoBlue-light, 10%);
+    &::before {
+      background-color: lighten($logoBlue-light, 34%);
+      background-image: linear-gradient(0deg, transparent calc(100% - 1px), darken($gray-lighter, 1%) calc(100% - 1px)), linear-gradient(90deg, transparent calc(100% - 1px), darken($gray-lighter, 1%) calc(100% - 1px));
+      background-size: 20px 20px;
+      background-repeat: repeat;
+      background-position: center center;
+    }
+    .c-h3 {
+      font-size: 2.4rem;
+      &::before {
+        background-color: $logoBlue-light;
+      }
+    }
+  }
+  &--other {
+    background-color: lighten($red, 3%);
+    &::before {
+      background-color: lighten($red, 15%);
+      background-image: linear-gradient(0deg, transparent calc(100% - 1px), $gray-lighter calc(100% - 1px)), linear-gradient(90deg, transparent calc(100% - 1px), $gray-lighter calc(100% - 1px));
+      background-size: 20px 20px;
+      background-repeat: repeat;
+      background-position: center center;
+    }
+    &.p-topStyle--even {
+      margin-bottom: 0;
+      @include mq(sm) {
+        margin-bottom: 5em;
+      }
+    }
+    .c-h3 {
+      &::before {
+        background-color: $red;
+      }
+    }
+  }
+  &__wrap {
+    @include mq(md) {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
+  &__chart {
+    margin-bottom: 1.8em;
+    @include mq(md) {
+      margin-bottom: 0;
+      width: 45%;
+    }
+    &Canvas {
+    position: relative;
+    }
+    &Text {
+      font-size: 1.2rem;
+      color: $gray;
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__CanvasWrap {
+    margin-bottom: 1.8em;
+    width: 100%;
+    height: 275px;
+    @include mq(md) {
+      margin-bottom: 1em;
+      height: 300px;
+    }
+  }
+  &__content {
+    @include mq(md) {
+      width: 50%;
+    }
+    &Block {
+      margin-bottom: 2.4em;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  &__title {
+    margin-bottom: .6em;
+    font-size: 1.8rem;
+    font-weight: 500;
+  }
+  .c-h2 {
+    &::before,
+    &::after {
+      background-color: $red;
+    }
+  }
+  .c-h3 {
+    @include mq(sm) {
+      margin-bottom: 2.1em;
+    }
+  }
+  &.p-topStyle {
+    margin-bottom: 0;
+    padding-bottom: 5em;
+  }
+}
+
+.p-topStyle,
+.p-topStyle--even {
+  margin-bottom: 3em;
+  padding: 4.35em 0;
+  position: relative;
+  @include mq(sm) {
+    margin-bottom: 5em;
+    padding: 12em 0;
+  }
+  &::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translateY(-50%) translateX(-50%);
+    width: 100%;
+    height: calc(100% - 1px);
+    z-index: -1;
+  }
+}
+
+.p-topStyle {
+  clip-path: polygon(0 0, 100% 25px, 100% 100%, 0 calc(100% - 25px));
+  @include mq(sm) {
+    clip-path: polygon(0 0, 100% 90px, 100% 100%, 0 calc(100% - 90px));
+  }
+  &::before {
+    clip-path: polygon(0 0, 100% 25px, 100% 100%, 0 calc(100% - 25px));
+    @include mq(sm) {
+      clip-path: polygon(0 0, 100% 90px, 100% 100%, 0 calc(100% - 90px));
+    }
+  }
+  &--even {
+    clip-path: polygon(0 25px, 100% 0, 100% calc(100% - 25px), 0 100%);
+    @include mq(sm) {
+      clip-path: polygon(0 90px, 100% 0, 100% calc(100% - 90px), 0 100%);
+    }
+    &::before {
+      clip-path: polygon(0 25px, 100% 0, 100% calc(100% - 25px), 0 100%);
+      @include mq(sm) {
+        clip-path: polygon(0 90px, 100% 0, 100% calc(100% - 90px), 0 100%);
+      }
+    }
+  }
+}

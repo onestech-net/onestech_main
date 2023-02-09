@@ -1,0 +1,9 @@
+@use '../global' as *;
+
+p {
+  margin-top: 0;
+}
+
+p, hr, address {
+  margin-bottom: $space-base;
+}
