@@ -10,7 +10,7 @@ div
           li.l-header__linksItem
             a(href="#" @click="toggleNav" v-scroll-to="{el: '#blockAbout', offset: -65}") ABOUT
           li.l-header__linksItem
-            a(href="#" @click="toggleNav" v-scroll-to="{el: '#blockIntro', offset: -65}") INTRODUCTION
+            a(href="#" @click="toggleNav" v-scroll-to="{el: '#blockIntro', offset: -65}") PROFILE
           li.l-header__linksItem
             a(href="#" @click="toggleNav" v-scroll-to="{el: '#blockSkills', offset: -65}") SKILL SET
       div(class="l-header__hum" @click="toggleNav" :class="{ 'is-active' : navStatus }")
@@ -40,7 +40,7 @@ div
     div.p-intro.p-topStyle--even#blockIntro
       div.l-container
         div.u-center
-          h2.c-h2 INTRODUCTION
+          h2.c-h2 PROFILE
         div.p-intro__wrap
           figure.p-intro__img
             img(src="/assets/img/top/im-intro-01.jpg" alt="")
